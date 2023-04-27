@@ -16,10 +16,13 @@
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.15",
     "@tailwindcss/line-clamp": "^0.4.2",
+    "antd": "^5.4.6",
     "daisyui": "^2.43.0",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
+    "mdb-react-ui-kit": "^6.0.0",
     "next": "13.0.6",
+    "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1"

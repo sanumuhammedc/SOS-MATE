@@ -15,9 +15,9 @@ const Hero = () => {
             <p className="text-sm sm:text-base lg:text-lg text-gray-500">
               Learn at your own pace, with lifetime <br  className="lg:flex hidden"/> access on mobile and desktop
             </p>
-            <button className="btn btn-sm lg:btn-lg bg-[#524fd5] text-white rounded-full border-none w-36 lg:w-44 capitalize">Get Started</button>
+            <button onclick="window.location.href='pages/signUp.js'" className="btn btn-sm lg:btn-lg bg-[#524fd5] text-white rounded-full border-none w-36 lg:w-44 capitalize">Get Started</button>
           </div>
-          <img src="/assets/hero.png" alt="" />
+          <img width={600} src="/assets/logo.png" alt="" />
         </div>
       </div>
     </>

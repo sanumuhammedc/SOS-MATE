@@ -7,8 +7,10 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
 import Values from "../components/Values";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
+  const {data:session}=useSession()
   return (
     <div>
       <Head>
@@ -20,10 +22,25 @@ export default function Home() {
         ></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-    <Hero/>
-    <Values/>
-   <Footer/>
+      {session ? User(session):Guest()}
     </div>
   );
+}
+
+function User(session){
+  return(
+    <div>
+    <Hero/>
+    <Values/>
+    <Footer/>
+    </div>
+  )
+}
+
+function Guest(){
+  return(
+    <div>
+      <p>Empty page</p>
+    </div>
+  )
 }

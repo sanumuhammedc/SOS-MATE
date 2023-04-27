@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useSession, signIn,signOut } from 'next-auth/react';
 
 function Copyright(props) {
   return (
@@ -26,7 +27,7 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -38,8 +39,12 @@ export default function SignIn() {
     });
   };
 
+  //googleHandler function 
+  async function handleGoogleSignin(){
+    signIn('google',{callbackUrl:"http://localhost:3000"})
+  }
+
   return (
-    <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -86,10 +91,17 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{mt: 3, mb: 2 }}
             >
               Sign In
             </Button>
+
+
+            <button class="google-button" onClick={handleGoogleSignin}>
+             <span class="google-icon"></span>
+             <span class="google-text">Sign in with Google</span>
+            </button>
+
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
@@ -106,6 +118,5 @@ export default function SignIn() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-    </ThemeProvider>
   );
 }

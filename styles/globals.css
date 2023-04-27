@@ -9,3 +9,32 @@
 .button{
     background-color: rgb(23, 19, 227);
 }
+
+.google-button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 16px;
+    cursor: pointer;
+    width: 400px;
+  }
+  
+  .google-icon {
+    background-image: url('https://developers.google.com/identity/images/g-logo.png');
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .google-text {
+    display: inline-block;
+    vertical-align: middle;
+  }

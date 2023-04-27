@@ -1,108 +1,55 @@
 import Navbar from '../components/Navbar'
 import { CheckIcon } from '@heroicons/react/20/solid'
+import DashBoardCard from '../components/DashBoardCard'
 
-const includedFeatures = [
+const datas = [
+  {
+    header: "Call Doctor",
+    img: "./assets/doctor.svg",
+    button: "Call Now",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+  },
+  {
+    header: "Book Ambulance",
+    img: "./assets/ambulance.svg",
+    button: "Book Now",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+  },
+  {
+    header: "Call Fire Force",
+    img: "./assets/fire.svg",
+    button: "Call Now",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+  },
+  {
+    header: "Medical Records", 
+    img: "./assets/doctor.svg",
+    button: "View Now",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+  }
 
-
-  'Private forum access',
-  'Member resources',
-  'Entry to annual conference',
-  'Official member t-shirt',
 ]
 
 function dashboard() {
   return (
     <div>
         <Navbar />
-        <div className="bg-white py-4 sm:py-2">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-wrap justify-around items-center  rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0">
-          <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-            <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
-              <div className="mx-auto max-w-xs px-8">
-                <p className="text-base font-semibold text-gray-600">Pay once, own it forever</p>
-                <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight text-gray-900">$349</span>
-                  <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
-                </p>
-                <a
-                  href="#"
-                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get access
-                </a>
-                <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
-                </p>
-              </div>
-            </div>
-          </div>
+      <div className="bg-white py-4 sm:py-2">
+       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-20 mb-12">
+        <div className="flex flex-wrap justify-around items-center p-5  rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0">
+          {datas.map(( data) => (
+            <DashBoardCard header={data.header} button={data.button} img={data.img} description={data.description} key={data.header} />
+          ))}
           
-          <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-            <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
-              <div className="mx-auto max-w-xs px-8">
-                <p className="text-base font-semibold text-gray-600">Pay once, own it forever</p>
-                <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight text-gray-900">$349</span>
-                  <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
-                </p>
-                <a
-                  href="#"
-                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get access
-                </a>
-                <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-            <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
-              <div className="mx-auto max-w-xs px-8">
-                <p className="text-base font-semibold text-gray-600">Pay once, own it forever</p>
-                <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight text-gray-900">$349</span>
-                  <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
-                </p>
-                <a
-                  href="#"
-                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get access
-                </a>
-                <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-            <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
-              <div className="mx-auto max-w-xs px-8">
-                <p className="text-base font-semibold text-gray-600">Pay once, own it forever</p>
-                <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight text-gray-900">$349</span>
-                  <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
-                </p>
-                <a
-                  href="#"
-                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get access
-                </a>
-                <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
-                </p>
-              </div>
-            </div>
-          </div>
+          
+         
+
+
         </div>
       </div>
     </div>
 
-    </div>
+  </div>
   )
 }
 

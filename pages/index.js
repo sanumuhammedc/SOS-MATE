@@ -22,25 +22,20 @@ export default function Home() {
         ></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {session ? User(session):Guest()}
+      {/* {session ? User(session):Guest()} */}
+      <Hero/>
+    <Values/>
+    <Footer/>
     </div>
   );
 }
 
-function User(session){
+/* function User(session){
   return(
     <div>
-    <Hero/>
-    <Values/>
-    <Footer/>
-    </div>
-  )
-}
 
-function Guest(){
-  return(
-    <div>
-      <p>Empty page</p>
     </div>
   )
 }
+ */
+

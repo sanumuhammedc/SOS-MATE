@@ -9,11 +9,10 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row justify-center  lg:justify-between items-center gap-5">
           <div className="flex flex-col gap-5 lg:gap-10">
             <p className=" text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium">
-              A Unique approach <br className="lg:flex hidden"/> to learning foreign <br className="lg:flex hidden" /> languages
-              online
+              A Unique approach <br className="lg:flex hidden"/> to  <br className="lg:flex hidden" /> Emergency Care
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-gray-500">
-              Learn at your own pace, with lifetime <br  className="lg:flex hidden"/> access on mobile and desktop
+              Care at your own pace, with lifetime <br  className="lg:flex hidden"/> access on mobile and desktop
             </p>
             <button onclick="window.location.href='pages/signUp.js'" className="btn btn-sm lg:btn-lg bg-[#524fd5] text-white rounded-full border-none w-36 lg:w-44 capitalize">Get Started</button>
           </div>

@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row justify-center  lg:justify-between items-center gap-5">
           <div className="flex flex-col gap-5 lg:gap-10">
             <p className=" text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium">
-              A Unique approach <br className="lg:flex hidden"/> to  <br className="lg:flex hidden" /> Emergency Care
+              A Unique Approach to <br className="lg:flex hidden"/> Emergency Care
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-gray-500">
               Care at your own pace, with lifetime <br  className="lg:flex hidden"/> access on mobile and desktop

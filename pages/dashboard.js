@@ -7,25 +7,25 @@ const datas = [
     header: "Call Doctor",
     img: "./assets/doctor.svg",
     button: "Call Now",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    description: ""
   },
   {
     header: "Book Ambulance",
     img: "./assets/ambulance.svg",
     button: "Book Now",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    description: ""
   },
   {
     header: "Call Fire Force",
     img: "./assets/fire.svg",
     button: "Call Now",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    description: ""
   },
   {
     header: "Medical Records", 
     img: "./assets/doctor.svg",
     button: "View Now",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    description: ""
   }
 
 ]

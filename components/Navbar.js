@@ -7,7 +7,7 @@ const Navbar = () => {
             <img width={90} height={90} src="/assets/logo.png" alt="logo" />
             <div className="flex flex-col lg:flex-row justify-center  lg:justify-between items-center gap-5">
                 <a href="">hello!</a>
-                <a href="">Home</a>
+                <a href="">Home</a> 
                 <a href="">Ambulance</a>
                 <a href="">Doctor</a>
                 <a href="">Support</a>

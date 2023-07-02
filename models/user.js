@@ -13,7 +13,12 @@ const UserSchema = new Schema({
     },
     image: {
         type: String,
-    }
+    },
+    type: {
+        type: String,
+        enum: ["admin", "user", "doctor", "driver"],
+        default: "user",
+    },
 });
 
 const User = models.User || model("User", UserSchema);

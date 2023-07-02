@@ -1,43 +1,35 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import Profile from "@components/Profile";
-import {session} from "@node_modules/next-auth/core/routes";
+
 
 const MyProfile = () => {
 
-    const {data: session} = useSession()
-    const [posts, setPosts] = useState([])
+    const { data: session } = useSession()
+    const router = useRouter()
 
     useEffect(() => {
-        const fetchPosts = async () => {
-            const response = await fetch(`/api/users/${session?.user.id}/posts`)
-            const data = await response.json()
-            setPosts(data)
+        if (!session?.user) {
+            router.push("/")
         }
+    }, [session])
 
-        if(session?.user.id)
-            fetchPosts()
-    }, [])
 
-    const handleEdit = () => {
-
-    }
-
-    const handleDelete = async () => {
-
-    }
 
     return (
-        <Profile
-            name="my name"
-            desc="Welcome to your personalised profile page"
-            data={posts}
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
-        />
+        session?.user ?
+            <Profile
+                desc="Welcome to your personalised profile page"
+            />
+            :
+            <>
+                <h1 className="head_text text-left" >
+                    <span className="blue_gradient" >Login to Access This page</span>
+                </h1>
+            </>
     )
 }
 export default MyProfile

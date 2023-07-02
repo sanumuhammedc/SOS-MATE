@@ -1,5 +1,4 @@
 import Features from "@components/Features";
-import Feed from "@components/Feed";
 import Footer from "@components/Footer";
 
 const Home = () => {

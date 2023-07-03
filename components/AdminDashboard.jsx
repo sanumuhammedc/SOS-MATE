@@ -60,7 +60,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Add User</h1>
+      <h1 className="text-2xl blue_gradient font-bold mb-4">Add Doctor/Ambulance Driver</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block mb-2">Email:</label>
@@ -107,7 +107,7 @@ const AdminDashboard = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          className="black_btn"
         >
           Add User
         </button>

@@ -4,21 +4,12 @@ import DriverDashboard from '@components/DriverDashboard'
 import UserDashboard from '@components/UserDashboard'
 import AdminDashboard from '@components/AdminDashboard'
 import { useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
 
 
 
 function dashboard() {
 
     const { data: session } = useSession()
-    const router = useRouter()
-
-    useEffect(() => {
-        if (!session?.user) {
-            router.push("/")
-        }
-    }, [session])
 
 
     return (

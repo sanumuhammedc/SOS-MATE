@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from "next/link";
 
 const MedicalRecord = ({ records }) => {
   return (
@@ -14,14 +14,14 @@ const MedicalRecord = ({ records }) => {
                   <p className="text-sm text-gray-500">{record.date}</p>
                 </div>
                 <div>
-                  <a
+                  <Link
                     href={record.fileUrl}
                     className="text-blue-500 hover:text-blue-700"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     View
-                  </a>
+                  </Link>
                 </div>
               </div>
               {record.imageUrl && (

@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 
 function DashBoardCard({header, img, button, description, link}) {
     return (
@@ -7,12 +7,12 @@ function DashBoardCard({header, img, button, description, link}) {
                 <div className="mx-auto max-w-xs px-8">
                 <p className="text-2xl font-bold tracking-tight text-gray-900">{header}</p>
                   <img src={img} alt="" className="w-auto h-32 object-center object-cover shadow-sm mx-auto" />
-                  <a
+                  <Link
                     href={link}
                     className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     {button}
-                  </a>
+                  </Link>
                   <p className="mt-6 text-xs leading-5 text-gray-600">
                     {description}
                   </p>

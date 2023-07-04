@@ -3,6 +3,7 @@ import { useState } from 'react';
 const AdminDashboard = () => {
   const [formData, setFormData] = useState({
     email: '',
+    name: '',
     username: '',
     image: '',
     type: '',
@@ -46,6 +47,7 @@ const AdminDashboard = () => {
         // Reset the form
         setFormData({
           email: '',
+          name: '',
           username: '',
           image: '',
           type: '',
@@ -68,6 +70,16 @@ const AdminDashboard = () => {
             type="email"
             name="email"
             value={formData.email}
+            onChange={handleChange}
+            className="border border-gray-300 rounded p-2 w-full"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             className="border border-gray-300 rounded p-2 w-full"
           />

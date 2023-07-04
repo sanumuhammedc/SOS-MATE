@@ -18,6 +18,8 @@ const handler = NextAuth({
     
             session.user.id = sessionUser._id.toString();
             session.user.type = sessionUser.type;
+            session.user.username = sessionUser.username;
+            session.user.image = sessionUser.image;
             return session;
         },
         async signIn({ profile }) {
@@ -29,6 +31,7 @@ const handler = NextAuth({
             if(!userExists) {
                 await User.create({
                     email: profile.email,
+                    name: profile.name,
                     username: profile.name.replace(/ /g, '').toLowerCase(),
                     image: profile.picture,
                 });

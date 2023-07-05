@@ -20,12 +20,16 @@ const handler = NextAuth({
             session.user.type = sessionUser.type;
             session.user.username = sessionUser.username;
             session.user.image = sessionUser.image;
+            session.user.phone = sessionUser.phone? sessionUser.phone : null;
             return session;
         },
         async signIn({ profile }) {
             await connectToDB();
     
             const userExists = await User.findOne({ email: profile.email });
+            console.log(profile)
+
+            const phone = profile.phone ? profile.phone : null;
 
     
             if(!userExists) {
@@ -33,6 +37,7 @@ const handler = NextAuth({
                     email: profile.email,
                     name: profile.name,
                     username: profile.name.replace(/ /g, '').toLowerCase(),
+                    phone: phone,
                     image: profile.picture,
                 });
             }

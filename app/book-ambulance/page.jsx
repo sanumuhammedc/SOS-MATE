@@ -12,6 +12,7 @@ const BookAmbulance = () => {
   const fetchDrivers = async () => {
     const response = await fetch("api/book/ambulance");
     const data = await response.json();
+    console.log(data);
 
     setDrivers(data);
   };
@@ -27,7 +28,7 @@ const BookAmbulance = () => {
         {drivers.length > 0 ? (
           <div className='w-full flex justify-around flex-wrap'>
             {drivers.map((driver) => (
-              <UserCard key={driver._id} image={driver.image} name={driver.name} username={driver.username} email={driver.email} action={"Book Now"} />
+              <UserCard key={driver._id} image={driver.image} name={driver.name} username={driver.username} phone={driver.phone} email={driver.email} action={"Book Now"} link={`tel:${driver.phone}`} />
             ))}
           </div>
         )
@@ -36,7 +37,7 @@ const BookAmbulance = () => {
               <p className="text-gray-900 mb-4 text-center">None of the Ambulance Drivers are online Please contact them through phone call</p>
               <div className='w-full flex justify-around flex-wrap'>
                 {drivers.map((driver) => (
-                  <UserCard key={driver._id} image={driver.image} name={driver.name} username={driver.username} email={driver.email} action={"Call Now"} />
+                  <UserCard key={driver._id} image={driver.image} name={driver.name} username={driver.username} phone={driver.phone} email={driver.email} action={"Call Now"} link={`tel:${driver.phone}`} />
                 ))}
               </div>
             </>

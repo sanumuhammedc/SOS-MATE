@@ -4,6 +4,7 @@ const AdminDashboard = () => {
   const [formData, setFormData] = useState({
     email: '',
     name: '',
+    phone: '',
     username: '',
     image: '',
     type: '',
@@ -48,6 +49,7 @@ const AdminDashboard = () => {
         setFormData({
           email: '',
           name: '',
+          phone: '',
           username: '',
           image: '',
           type: '',
@@ -61,7 +63,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4">
+    <div className="max-w-md mx-auto p-4 mb-20">
       <h1 className="text-2xl blue_gradient font-bold mb-4">Add Doctor/Ambulance Driver</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -80,6 +82,16 @@ const AdminDashboard = () => {
             type="text"
             name="name"
             value={formData.name}
+            onChange={handleChange}
+            className="border border-gray-300 rounded p-2 w-full"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Phone:</label>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
             onChange={handleChange}
             className="border border-gray-300 rounded p-2 w-full"
           />
@@ -113,6 +125,7 @@ const AdminDashboard = () => {
             className="border border-gray-300 rounded p-2 w-full"
           >
             <option value="">Select type</option>
+            <option value="admin">Admin</option>
             <option value="doctor">Doctor</option>
             <option value="driver">Driver</option>
           </select>

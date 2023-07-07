@@ -23,6 +23,7 @@ const UserSchema = new Schema({
         enum: ["admin", "user", "doctor", "driver"],
         default: "user",
     },
+
 });
 
 const User = models.User || model("User", UserSchema);

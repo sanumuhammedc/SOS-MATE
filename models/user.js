@@ -10,6 +10,10 @@ const UserSchema = new Schema({
         type: String,
         required: [true, "Name is required!"],
     },
+    phone: {
+        type: Number,
+        match: [/^[0-9]{10}$/, "Phone number invalid, it should contain 10 digits!"]
+    },
     username: {
         type: String,
         required: [true, 'Username is required!'],

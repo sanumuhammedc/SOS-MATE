@@ -27,6 +27,24 @@ const UserSchema = new Schema({
         enum: ["admin", "user", "doctor", "driver"],
         default: "user",
     },
+    isOnline: {
+        type: Boolean,
+        default: false,
+    },
+    location: {
+        latitude: {
+          type: Number,
+        },
+        longitude: {
+          type: Number,
+        },
+        address: {
+          type: String,
+        }
+    },
+    booking: {        
+        type: Schema.Types.ObjectId,    
+    },
 
 });
 

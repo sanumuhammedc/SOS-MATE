@@ -91,7 +91,7 @@ useEffect(() => {
 
   if (session) {
     let namePrint;
-    if (session.user.type === 'driver') {
+    if (session.user.type === 'doctor') {
       namePrint = session.user.name;
       socket.current.emit("addDoctor",namePrint);
       console.log('passed');

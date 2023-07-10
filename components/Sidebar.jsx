@@ -72,7 +72,7 @@ const Sidebar = ({ children , session }) => {
           <div>
             {onlineDoctors.map((doctor, index) => {
               // Check if the doctor is the current user
-              if (session && session.user && session.user.type === 'driver' && session.user.name === doctor.name) {
+              if (session && session.user && session.user.type === 'doctor' && session.user.name === doctor.name) {
                 return null; // Skip rendering for the current user
               }
 

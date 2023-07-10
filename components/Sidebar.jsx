@@ -5,7 +5,8 @@ const Sidebar = ({ children , session }) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser, onlineDoctors } = useContext(SocketContext);
   const [idToCall, setIdToCall] = useState('');
 
-  const handleCopyClick = () => {
+  const handleCopyClick = (e) => {
+    
     navigator.clipboard.writeText(me)
       .then(() => {
         console.log('Copied to clipboard:', me);
@@ -31,6 +32,7 @@ const Sidebar = ({ children , session }) => {
                   placeholder="Name"
                 />
                 <button
+                  type="button"
                   className="bg-blue-500 hover:bg-blue-600 text-white font-medium rounded px-4 py-2 w-full"
                   onClick={handleCopyClick}
                 >
@@ -49,6 +51,7 @@ const Sidebar = ({ children , session }) => {
                 />
                 {callAccepted && !callEnded ? (
                   <button
+                    type="button"
                     className="bg-red-500 hover:bg-red-600 text-white font-medium rounded px-4 py-2 w-full"
                     onClick={leaveCall}
                   >
@@ -56,6 +59,7 @@ const Sidebar = ({ children , session }) => {
                   </button>
                 ) : (
                   <button
+                    type="button"
                     className="bg-blue-500 hover:bg-blue-600 text-white font-medium rounded px-4 py-2 w-full"
                     onClick={() => callUser(idToCall)}
                   >
@@ -68,7 +72,7 @@ const Sidebar = ({ children , session }) => {
           <div>
             {onlineDoctors.map((doctor, index) => {
               // Check if the doctor is the current user
-              if (session && session.user && session.user.type === 'doctor' && session.user.name === doctor.name) {
+              if (session && session.user && session.user.type === 'driver' && session.user.name === doctor.name) {
                 return null; // Skip rendering for the current user
               }
 

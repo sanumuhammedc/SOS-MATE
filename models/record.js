@@ -4,6 +4,7 @@ const RecordSchema = new Schema({
     creator: {
         type: Schema.Types.ObjectId,
         ref: 'User',
+        required: [true, 'Creator is required.']
     },
     name: {
         type: String,
@@ -15,5 +16,5 @@ const RecordSchema = new Schema({
     }
 })
 
-const Record = models.Record || model('Prompt', RecordSchema)
+const Record = models.Record || model('Record', RecordSchema)
 export default Record

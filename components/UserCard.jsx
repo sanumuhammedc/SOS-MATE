@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const UserCard = ({name, username, phone, email, image, type, action, link }) => {
+const UserCard = ({name, username, phone, email, image, type, action, link, target }) => {
   return (
 
     <div className="w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow mb-4">
@@ -12,10 +12,10 @@ const UserCard = ({name, username, phone, email, image, type, action, link }) =>
         <div>
         <hr className="border border-gray-300 my-4" />
           <h3 className="text-gray-900"><span className="font-bold">Email:</span> {email}</h3>
-          <h3 className="text-gray-900"><span className="font-bold">Phone:</span> {phone}</h3>
+          {phone && <h3 className="text-gray-900"><span className="font-bold">Phone:</span> {phone}</h3>}
         </div>
         <div className="flex mt-4 space-x-3 md:mt-6">
-          <Link href={link} className="black_btn">{action}</Link>
+          {target?<Link href={link} target={target} className="black_btn">{action}</Link>:<Link href={link} className="black_btn">{action}</Link>}
         </div>
       </div>
     </div>

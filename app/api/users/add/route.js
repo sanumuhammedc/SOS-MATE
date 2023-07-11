@@ -3,7 +3,6 @@ import { connectToDB } from "@utils/database";
 
 export const POST = async (request) => {
     const user = await request.json();
-    console.log(user);
 
     try {
         await connectToDB();
@@ -16,6 +15,7 @@ export const POST = async (request) => {
         await newUser.save();
         return new Response(JSON.stringify(newUser), { status: 201 })
     } catch (error) {
+        console.log(error);
         return new Response("Failed to create user", { status: 500 });
     }
 }

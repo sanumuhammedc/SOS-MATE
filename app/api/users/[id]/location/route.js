@@ -11,14 +11,15 @@ export const POST = async (request, { params  }) => {
             _id: id
         })
 
-        const data = await request.json()
 
-        user.booking = data.booking;
-        console.log(user)
+        const data = await request.json()
+        user.location = data.location 
+        user.booking = data.booking  
+        console.log(user)     
         await user.save()
 
         return new Response(JSON.stringify(user), {status: 200})
     } catch (error) {
-        return new Response("Failed to book", {status: 500})
+        return new Response("Failed to  add location", {status: 500})
     }
 }

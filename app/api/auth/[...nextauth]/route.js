@@ -21,6 +21,7 @@ const handler = NextAuth({
             session.user.username = sessionUser.username;
             session.user.image = sessionUser.image;
             session.user.phone = sessionUser.phone? sessionUser.phone : null;
+            session.user.booking = sessionUser.booking? sessionUser.booking : null;
             return session;
         },
         async signIn({ profile }) {

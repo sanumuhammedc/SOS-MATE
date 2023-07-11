@@ -4,7 +4,7 @@ import DriverDashboard from '@components/DriverDashboard'
 import UserDashboard from '@components/UserDashboard'
 import AdminDashboard from '@components/AdminDashboard'
 import { useSession } from 'next-auth/react'
-
+import VideoChat from '@app/videoChat/page'
 
 
 function dashboard() {
@@ -15,7 +15,7 @@ function dashboard() {
     return (
         session?.user ? (
             session.user.type === "user" &&  <UserDashboard /> ||
-            session.user.type === "doctor" && <DoctorDashboard /> ||
+            session.user.type === "doctor" && <VideoChat /> ||
             session.user.type === "driver" && <DriverDashboard /> ||
             session.user.type === "admin" && <AdminDashboard />
         ) :

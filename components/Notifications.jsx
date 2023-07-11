@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-
 import { SocketContext } from '../app/api/socket/context';
 
 const Notifications = () => {
@@ -9,9 +8,10 @@ const Notifications = () => {
     <>
       {call.isReceivingCall && !callAccepted && (
         <div className="flex justify-around">
-          <h1>{call.name} is calling:</h1>
+          <h1 className="mr-4 mt-1 text-lg font-bold">{call.name} is calling:</h1> {/* Add a margin-right to create space */}
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white font-medium rounded px-4 py-2"
+            type="button"
+            className="bg-black text-white font-medium rounded px-4 py-2"
             onClick={answerCall}
           >
             Answer

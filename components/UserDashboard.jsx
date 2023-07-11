@@ -7,7 +7,7 @@ const datas = [
         img: "./assets/images/doctor.svg",
         button: "Call Now",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, reprehenderit.",
-        link: "/call-doctor"
+        link: "/videoChat"
     },
     {
         header: "Book Ambulance",

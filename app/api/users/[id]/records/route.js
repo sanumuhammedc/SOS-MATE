@@ -28,3 +28,20 @@ export const GET = async (request, { params }) => {
         return new Response("Failed to fetch records", { status: 500 })
     }
 }
+
+export const DELETE = async (request, { params }) => {
+    const {id} = await request.json();
+
+    console.log(id);
+  
+    try {
+      await connectToDB();
+  
+      await Record.findByIdAndRemove(id);
+  
+      return new Response("Successfully deleted document", { status: 200 });
+    } catch (error) {
+      return new Response("Failed to delete record", { status: 500 });
+    }
+  };
+  

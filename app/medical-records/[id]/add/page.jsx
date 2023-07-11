@@ -64,29 +64,37 @@ const AddDocument = () => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="document">Document:</label>
-        <input
-          type="file"
-          id="document"
-          name="document"
-          accept="image/jpeg, image/png"
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit">Add Record</button>
-    </form>
+    <>
+    <h1 className="text-lg font-semibold blue_gradient mb-4">Add Medical Records</h1>
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+  <div className="mb-6">
+    <label htmlFor="name" className="text-lg font-semibold mb-2">Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      className="w-full border border-gray-300 rounded py-2 px-3"
+    />
+  </div>
+  <div className="mb-6">
+    <label htmlFor="document" className="text-lg font-semibold mb-2">Document:</label>
+    <input
+      type="file"
+      id="document"
+      name="document"
+      accept="image/jpeg, image/png"
+      onChange={handleChange}
+      className="w-full border border-gray-300 rounded py-2 px-3"
+    />
+  </div>
+  <button type="submit" className="black_btn">
+    Add Record
+  </button>
+</form>
+</>
+
   )
 }
 

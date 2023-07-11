@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
+import Image from "next/image";
 
 const MedicalRecord = () => {
   const [records, setRecords] = useState([]);
@@ -21,6 +22,29 @@ const MedicalRecord = () => {
     }
   };
 
+  const handleDelete = async (docId) => {
+    try {
+      const response = await fetch(`http://localhost:3000/api/users/${userId}/records/${docId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        alert('Record deleted successfully!');
+        window.location.reload();
+      } else {
+        const { error } = await response.json();
+        alert(`Failed to delete record: ${error}`);
+      }
+    } catch (error) {
+      console.error('Error deleting record:', error);
+    }
+  };
+  
+
+
   useEffect(() => {
     fetchRecords();
   }, []);
@@ -37,7 +61,12 @@ const MedicalRecord = () => {
               {records.map((record) => (
                 <div key={record._id} className="w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow-md mb-4">
                   <div className="p-4">
+                    <div className="flex justify-between items-center">
                     <h3 className="text-lg font-semibold mb-2">{record.name}</h3>
+                    <button onClick={()=>{handleDelete(record._id)}} >
+                    <Image src={"/assets/images/delete.svg"} alt="Medical Record" width={25} height={25} />
+                    </button>
+                    </div>
                     <Link href={record.document} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">
                       <div className="w-full h-40 overflow-hidden rounded-lg">
                         <img src={record.document} alt="Medical Record" className="w-full h-full object-cover" />

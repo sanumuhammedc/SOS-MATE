@@ -3,7 +3,7 @@ import Link from "next/link";
 const UserCard = ({name, username, phone, email, image, type, action, link, target }) => {
   return (
 
-    <div className="w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow mb-4">
+    <div className="w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow mb-4 p-2">
 
       <div className="flex flex-col items-center py-10">
         <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={image} alt="User image" />

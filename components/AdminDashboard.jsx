@@ -71,6 +71,8 @@ const AdminDashboard = () => {
           <input
             type="email"
             name="email"
+            required
+            placeholder='Enter Users Email'
             value={formData.email}
             onChange={handleChange}
             className="border border-gray-300 rounded p-2 w-full"
@@ -81,6 +83,8 @@ const AdminDashboard = () => {
           <input
             type="text"
             name="name"
+            required
+            placeholder='Enter Users Name'
             value={formData.name}
             onChange={handleChange}
             className="border border-gray-300 rounded p-2 w-full"
@@ -91,6 +95,8 @@ const AdminDashboard = () => {
           <input
             type="tel"
             name="phone"
+            required
+            placeholder='Enter Users Phone no'
             value={formData.phone}
             onChange={handleChange}
             className="border border-gray-300 rounded p-2 w-full"
@@ -101,6 +107,8 @@ const AdminDashboard = () => {
           <input
             type="text"
             name="username"
+            required
+            placeholder='Enter Users Username'
             value={formData.username}
             onChange={handleChange}
             className="border border-gray-300 rounded p-2 w-full"

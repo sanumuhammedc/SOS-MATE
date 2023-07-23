@@ -7,7 +7,7 @@ const Home = () => {
             <h1 className="head_text text-center">
                 Care & Cure
                 <br className="max-md:hidden" />
-                <span className="orange_gradient text-center">SOS MATE</span>
+                <span className="orange_gradient text-center ">SOS MATE</span>
             </h1>
             <p className="desc text-center">
                 A Unique Approach to

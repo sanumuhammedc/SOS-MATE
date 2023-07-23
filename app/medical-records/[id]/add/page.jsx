@@ -73,6 +73,8 @@ const AddDocument = () => {
       type="text"
       id="name"
       name="name"
+      required
+      placeholder='Enter Document Name'
       value={formData.name}
       onChange={handleChange}
       className="w-full border border-gray-300 rounded py-2 px-3"

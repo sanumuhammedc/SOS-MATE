@@ -15,7 +15,7 @@ const UserDashboard = () => {
             img: "./assets/images/doctor.svg",
             button: "Call Now",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, reprehenderit.",
-            link: "/videoChat"
+            link: "/call-doctor"
         },
         {
             header: "Book Ambulance",

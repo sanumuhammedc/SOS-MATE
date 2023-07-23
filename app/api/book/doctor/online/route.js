@@ -7,7 +7,8 @@ export const GET = async (request, { params  }) => {
         await connectToDB()
 
         const users = await User.find({
-            type: "doctor"
+            type: "doctor",
+            isOnline: true
         })
 
         return new Response(JSON.stringify(users), {status: 200})

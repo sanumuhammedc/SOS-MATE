@@ -1,7 +1,7 @@
 import '@styles/global.css';
 import Nav from '@components/Nav';
 import Provider from '@components/Provider';
-import { ContextProvider } from './api/socket/context';
+import { ContextProvider } from '../components/context';
 import { useSession } from 'next-auth/react';
 
 

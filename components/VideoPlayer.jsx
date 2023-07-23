@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import { SocketContext } from '../app/api/socket/context';
+import { SocketContext } from './context';
 
 const VideoPlayer = () => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);

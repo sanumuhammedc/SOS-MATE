@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { ContextProvider } from '@app/api/socket/context';
+import { ContextProvider } from '@components/context';
 import VideoPlayer from '../../components/VideoPlayer';
 import Sidebar from '../../components/Sidebar';
 import Notifications from '../../components/Notifications';
